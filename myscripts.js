@@ -108,7 +108,6 @@ function displayMultipleWinners(prizes) {
         prize.laureates.forEach(laureate => {
             const fullName = `${laureate.firstname} ${laureate.surname}`;
             
-            // If laureate is already in the map, increment their count
             if (multipleWinners.has(fullName)) {
                 multipleWinners.set(fullName, multipleWinners.get(fullName) + 1);
             } else {
@@ -119,7 +118,6 @@ function displayMultipleWinners(prizes) {
 
     const winnersArray = Array.from(multipleWinners);
 
-    // Filter laureates with count greater than 1
     const multipleWinnersArray = winnersArray.filter(([_, count]) => count > 1);
 
     if (multipleWinnersArray.length > 0) {
